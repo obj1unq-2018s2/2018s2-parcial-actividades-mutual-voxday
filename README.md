@@ -21,7 +21,7 @@ Para calcular _cuántos días_ lleva un viaje de playa, se hace esta cuenta: `la
 
 ### Excursión a ciudad
 De cada **excursión a ciudad** se informa cuántas atracciones se van a visitar. 
-Los _días_ que lleva un viaje de este tipo se calculan como `cantidad de atracciones / 2`. Una excursión _implica esfuerzo_ si se visitan entre 5 y 8 atracciones, y nunca _sirve para broncearse_. 
+Los _días_ que lleva un viaje de este tipo se calculan como `cantidad de atracciones / 2`. Una excursión _implica esfuerzo_ si se visitan entre al menos 5 atracciones, y nunca _sirve para broncearse_. 
 
 Un caso especial son las **excursiones a ciudad tropical**. Son como las excursiones a ciudad, con las siguientes variantes: dura un día más que una excursión a ciudad de las mismas características, y sí sirve para broncearse, siempre.
 
@@ -68,9 +68,9 @@ Se deben resolver las mismas cuatro preguntas que para los viajes, que se respon
 ## 4. Socios, agregar actividad
 Agregar al modelo los **socios**. De cada socio se debe registrar _qué actividades realizó_, que pueden ser viajes o clases de gimnasia. Para cada socio se establece también un _máximo de actividades_ que puede hacer.
 
-Se debe resolver, para un socio:
-* si es, o no, _adorador del sol_. La condición es que todas actividades que realizó sirven para broncearse.
-* la colección de _actividades esforzadas_, o sea, las actividades que realizó que implican esfuerzo.
+Para un socio, se pide:
+* poder consultar si es, o no, _adorador del sol_. La condición es que todas actividades que realizó sirven para broncearse.
+* poder consultar la colección de _actividades esforzadas_, o sea, las actividades que realizó que implican esfuerzo.
 * registrar que realiza una actividad. Si ya llegó al máximo de actividades que puede hacer, hay que lanzar error.
 
 P.ej. tomemos a Roque, un socio que hizo 2 viajes a la playa, con longitudes de 1000 y 2000 metros respectivamente, y que tiene un máximo de 2 actividades. En este caso:
@@ -103,7 +103,7 @@ Para las **clases de gimnasia**, la condición es que el socio tenga entre 20 y 
 <br>
 
 ## Bonus: taller literario
-Agregar un nuevo tipo de actividad: el **taller literario**. De cada taller se registra sobre qué libros se trabaja. De cada libro se conoce: el idioma, la cantidad de páginas, y el nombre del autor.
+Agregar un nuevo tipo de actividad: el **taller literario**. De cada taller se registra sobre qué libros se trabaja (cada taller trabaja con varios libros). De cada libro se conoce: el idioma, la cantidad de páginas, y el nombre del autor.
 
 Para un taller literario tenemos:
 * idiomas usados: los de los libros que se trabajan.
