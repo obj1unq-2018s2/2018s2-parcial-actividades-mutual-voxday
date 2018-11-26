@@ -1,0 +1,26 @@
+import viajes.*
+
+describe "test" {
+	var viaje1 = new ExcursionACiudad (cantAtracciones = 4,idiomas = ["ruso", "frances","afrikaans"])
+	var sali = new SalidaDeTrekking(kilometros = 100 , diasDeSol = 130)
+	var soli = new SalidaDeTrekking( kilometros =50 , diasDeSol = 240 , idiomas = ["japones", "ingles"]) 
+	test "primera excursion"{
+		assert.notThat(viaje1.implicaEsfuerzo())
+		
+	}
+	
+	test "trekking"{
+		assert.equals(2,sali.dias())
+		assert.that(sali.implicaEsfuerzo())
+		assert.notThat(sali.sirveParaBroncearse())
+		assert.equals(1,soli.dias())
+		assert.notThat(soli.implicaEsfuerzo())
+		assert.that(soli.sirveParaBroncearse())
+		
+	}
+	
+	test " viajes interesantes"{
+		assert.that(soli.esInteresante())
+		assert.that(viaje1.esInteresante())
+	}
+}
