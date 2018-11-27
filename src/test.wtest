@@ -1,9 +1,18 @@
 import viajes.*
+import socios.*
 
 describe "test" {
 	var viaje1 = new ExcursionACiudad (cantAtracciones = 4,idiomas = ["ruso", "frances","afrikaans"])
 	var sali = new SalidaDeTrekking(kilometros = 100 , diasDeSol = 130)
-	var soli = new SalidaDeTrekking( kilometros =50 , diasDeSol = 240 , idiomas = ["japones", "ingles"]) 
+	var soli = new SalidaDeTrekking( kilometros =50 , diasDeSol = 240 , idiomas = ["japones", "ingles"])
+	var roque = new SocioTranquilo(maximoDeActividades = 2,edad = 20, idiomasHablados = ["espaniol"] )
+	// var lila = new SocioCoherente(maximoDeActiviades = 3, edad = 23, idiomasHablados = ["espaniol", "frances", "ingles"])
+	var viaje2 = new ViajeDePlaya(largoDePlaya = 1000, idiomas = ["catalan"])
+	var viaje3 = new ViajeDePlaya(largoDePlaya = 2000,idiomas = ["espaniol"] )
+	fixture {
+		roque.realizar(viaje2)
+		roque.realizar(viaje3)
+	}
 	test "primera excursion"{
 		assert.notThat(viaje1.implicaEsfuerzo())
 		
@@ -23,4 +32,13 @@ describe "test" {
 		assert.that(soli.esInteresante())
 		assert.that(viaje1.esInteresante())
 	}
+	
+	test " roque"{
+		assert.that(roque.adoradorDelSol())
+	    assert.equals([viaje3],roque.actividadesEsforzadas())
+	}
+	
+	/*test "punto 5" {
+		assert.that(lila.)
+	}*/
 }
